@@ -1,0 +1,20 @@
+{
+  "users": {
+    "user1": {
+      "username": "",
+      "uid": ""
+    },
+    "user2": {
+      "username": "",
+      "uid": ""
+    },
+    "user3": {
+      "username": "",
+      "uid": ""
+    },
+    "user4": {
+      "username": "",
+      "uid": ""
+    }
+  }
+}

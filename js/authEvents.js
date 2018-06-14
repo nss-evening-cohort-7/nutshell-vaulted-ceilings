@@ -1,3 +1,5 @@
+const {getUserById, saveNewUser,} = require('./firebaseApi');
+
 const authorizationEvents = () => {
   $('#go-register').click(() => {
     $('#register-form').removeClass('hide');
@@ -10,9 +12,30 @@ const authorizationEvents = () => {
   });
 
   $('#register-btn').click(() => {
-    const email = $('#registerEmail').val();
-    const password = $('#registerPassword').val();
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    const userEmail = $('#registerEmail').val();
+    const userPassword = $('#registerPassword').val();
+    const userName = $('#registerUsername').val();
+    firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
+      .then((createdUser) => {
+        getUserById(createdUser.user.uid)
+          .then((user) => {
+            if (Object.keys(user).length === 0) {
+              const newUser = {
+                username: userName,
+                uid: createdUser.user.uid,
+              };
+              saveNewUser(newUser).then((uzerr) => {
+                $('#auth').addClass('hide');
+                $('#welcome, #logout').removeClass('hide');
+                $('#users, #events, #tasks, #friends, #messages').addClass('hide');
+              });
+            } else {
+              $('#auth').addClass('hide');
+              $('#welcome, #logout').removeClass('hide');
+              $('#users, #events, #tasks, #friends, #messages').addClass('hide');
+            };
+          });
+      })
       .catch((error) => {
         $('#register-error-msg').text(error.message);
         $('#register-error').removeClass('hide');
@@ -37,11 +60,9 @@ const authorizationEvents = () => {
       .then(() => {
         // Sign-out successful.
         $('#auth').removeClass('hide');
-        $('#auth-link').removeClass('hide');
-        $('#saved-link, #logout').addClass('hide');
-        $('#zip-submit').addClass('hide');
-        $('#savedForecasts').addClass('hide');
-        $('#savedForecasts').html('');
+        $('#welcome, #logout').addClass('hide');
+        $('#users, #events, #tasks, #friends, #messages').addClass('hide');
+        $('#inputPassword, #inputEmail, #registerPassword, #registerEmail, #registerUsername').val('');
       })
       .catch((error) => {
         // An error happened.
