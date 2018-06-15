@@ -118,8 +118,26 @@
 
     <div id="users" class="hide"></div>
     <div id="events" class="hide"></div>
-    <div id="tasks" class="hide text-center"></div>
-    <div id="friends" class="hide"></div>
+    <div id="tasks" class="hide"></div>
+
+    <!-- Friends Page -->
+
+    <div id="friends" class="hide">
+      <h1>Friends</h1>
+      <div class="row text-center" id="friendsNav">
+        <button class="btn btn-danger" id="getFriendsBtn">Get New Friends</button>
+        <button class="btn btn-success" id="showFriendsBtn">Friends</button>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 " id="newFriendsBay"></div>
+        <div class="col-md-3" id="myFriendsList"></div>
+        <div class="col-md-3" id="pendingFriendRequests"></div>
+      </div>
+    </div>
+
+    <!-- End Friends Module -->
+
     <div id="messages" class="hide"></div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

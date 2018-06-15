@@ -14,3 +14,9 @@ body {
   margin-left: 2%;
   margin-right: 2%;
 }
+
+/* Friends */
+
+.friendCard {
+  background-color: blue;
+}
