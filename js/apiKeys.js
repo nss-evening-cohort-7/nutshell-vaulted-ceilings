@@ -27,4 +27,5 @@ const retrieveKeys = () => {
 
 module.exports = {
   retrieveKeys,
+  apiKeys,
 };
