@@ -126,8 +126,7 @@
               <h1>My Events</h1>
           </div>
           <div class="col-md-2 col-md-offset-8 text-center">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Add New Event</button>
+            <button id="newEventBtn" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Add New Event</button>
           </div>
         </div>
       </div>
@@ -140,7 +139,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">New Event</h4>
+              <h4 class="modal-title">Event Details</h4>
             </div>
             <div class="modal-body">
               <div class="form-group">
@@ -158,7 +157,8 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button id="saveEvent" type="button" class="btn btn-primary">Save Event</button>
+              <button id="saveEventBtn" type="button" class="btn btn-primary">Save Event</button>
+              <button id="updateEventBtn" type="button" class="btn btn-primary hide">Update Event</button>
             </div>
           </div>
         </div>

@@ -76,11 +76,18 @@ body {
 /* End Tasks */
 
 /* Events */
+.event-form {
+  border-radius: 5px;
+  border: 1px solid darkgray;
+}
+
 .event-card {
   background-color: #5bc0de;
-  margin: 2% 1.5%;
+  margin: 2% 4.1%;
   border-radius: 5px;
+  min-height: 250px;
 }
+
 .btn-group {
   margin-bottom: 10px;
 }

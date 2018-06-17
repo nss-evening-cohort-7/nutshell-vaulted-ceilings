@@ -65,8 +65,26 @@ const deleteEvent = (id) => {
   });
 };
 
+const updateUserEvent = (updatedEvt, id) => {
+  return new Promise((resolve, reject) => {
+    firebaseConfig = getConfig();
+    $.ajax({
+      method: 'PUT',
+      url: `${firebaseConfig.databaseURL}/events/${id}.json`,
+      data: JSON.stringify(updatedEvt),
+    })
+      .done((modifiedEvt) => {
+        resolve(modifiedEvt);
+      })
+      .fail((error) => {
+        reject(error);
+      });
+  });
+};
+
 module.exports = {
   saveNewEvent,
   getAllEventsFromFb,
   deleteEvent,
+  updateUserEvent,
 };
