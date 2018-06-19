@@ -113,6 +113,7 @@ const getMyFriends = () =>
           {
             allFriendsObj[fbKey].id = fbKey;
             allFriendsArr.push(allFriendsObj[fbKey]);
+            console.log(allFriendsArr);
 
           });
         }

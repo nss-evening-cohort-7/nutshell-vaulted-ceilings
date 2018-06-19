@@ -15,6 +15,7 @@ const modFriendsList = (friendsArr) =>
 
 const friendsList = (friendsArr) =>
 {
+  console.log(friendsArr);
   let domString = '';
   friendsArr.forEach(bud =>
   {
@@ -36,7 +37,8 @@ const friendsList = (friendsArr) =>
     domString += `</div>`;
     domString += `</div>`;
   });
-  $('#myFriendsList').html(domString);
+  $('#myFriendsList').html('');
+  $('#myFriendsList').append(domString);
 };
 
 const friendRequestCard = (fRArr) =>

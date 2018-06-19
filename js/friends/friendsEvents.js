@@ -283,6 +283,7 @@ const showFriends = () =>
   getMyFriends()
     .then((result) =>
     {
+      console.log(result);
       getFriendRequests()
         .then((friendRequests) =>
         {
@@ -293,7 +294,7 @@ const showFriends = () =>
           {
             if (element.friendUid !== firebase.auth().currentUser.uid)
             {
-              friendsList(friendArr);
+              friendsList(result);
             }
           });
 
